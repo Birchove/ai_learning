@@ -1,0 +1,256 @@
+{
+  "game_id": "f47b1d2a",
+  "name": "新游戏",
+  "status": "ended",
+  "winner": "good",
+  "day": 3,
+  "players": [
+    {
+      "player_id": 1,
+      "name": "AI_Player_1",
+      "role": "werewolf",
+      "is_alive": false
+    },
+    {
+      "player_id": 2,
+      "name": "AI_Player_2",
+      "role": "werewolf",
+      "is_alive": false
+    },
+    {
+      "player_id": 3,
+      "name": "AI_Player_3",
+      "role": "seer",
+      "is_alive": false
+    },
+    {
+      "player_id": 4,
+      "name": "AI_Player_4",
+      "role": "witch",
+      "is_alive": false
+    },
+    {
+      "player_id": 5,
+      "name": "AI_Player_5",
+      "role": "guard",
+      "is_alive": true
+    },
+    {
+      "player_id": 6,
+      "name": "AI_Player_6",
+      "role": "hunter",
+      "is_alive": true
+    },
+    {
+      "player_id": 7,
+      "name": "AI_Player_7",
+      "role": "villager",
+      "is_alive": true
+    },
+    {
+      "player_id": 8,
+      "name": "AI_Player_8",
+      "role": "villager",
+      "is_alive": true
+    },
+    {
+      "player_id": 9,
+      "name": "AI_Player_9",
+      "role": "villager",
+      "is_alive": true
+    },
+    {
+      "player_id": 10,
+      "name": "AI_Player_10",
+      "role": "villager",
+      "is_alive": true
+    }
+  ],
+  "dead_players": [
+    {
+      "player_id": 3,
+      "name": "AI_Player_3",
+      "role": "seer"
+    },
+    {
+      "player_id": 1,
+      "name": "AI_Player_1",
+      "role": "werewolf"
+    },
+    {
+      "player_id": 4,
+      "name": "AI_Player_4",
+      "role": "witch"
+    },
+    {
+      "player_id": 2,
+      "name": "AI_Player_2",
+      "role": "werewolf"
+    }
+  ],
+  "speech_records": [
+    {
+      "day": 1,
+      "player_id": 1,
+      "content": "Mock response to: 你是werewolf，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: werewolf\nYour player_id: 1\n\nPlaye..."
+    },
+    {
+      "day": 1,
+      "player_id": 2,
+      "content": "Mock response to: 你是werewolf，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: werewolf\nYour player_id: 2\n\nPlaye..."
+    },
+    {
+      "day": 1,
+      "player_id": 4,
+      "content": "Mock response to: 你是witch，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: witch\nYour player_id: 4\n\nPlayers:\n  ..."
+    },
+    {
+      "day": 1,
+      "player_id": 5,
+      "content": "Mock response to: 你是guard，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: guard\nYour player_id: 5\n\nPlayers:\n  ..."
+    },
+    {
+      "day": 1,
+      "player_id": 6,
+      "content": "Mock response to: 你是hunter，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: hunter\nYour player_id: 6\n\nPlayers:\n..."
+    },
+    {
+      "day": 1,
+      "player_id": 7,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: villager\nYour player_id: 7\n\nPlaye..."
+    },
+    {
+      "day": 1,
+      "player_id": 8,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: villager\nYour player_id: 8\n\nPlaye..."
+    },
+    {
+      "day": 1,
+      "player_id": 9,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: villager\nYour player_id: 9\n\nPlaye..."
+    },
+    {
+      "day": 1,
+      "player_id": 10,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 1, Phase: vote\nYour role: villager\nYour player_id: 10\n\nPlay..."
+    },
+    {
+      "day": 2,
+      "player_id": 2,
+      "content": "Mock response to: 你是werewolf，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: werewolf\nYour player_id: 2\n\nPlaye..."
+    },
+    {
+      "day": 2,
+      "player_id": 5,
+      "content": "Mock response to: 你是guard，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: guard\nYour player_id: 5\n\nPlayers:\n  ..."
+    },
+    {
+      "day": 2,
+      "player_id": 6,
+      "content": "Mock response to: 你是hunter，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: hunter\nYour player_id: 6\n\nPlayers:\n..."
+    },
+    {
+      "day": 2,
+      "player_id": 7,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: villager\nYour player_id: 7\n\nPlaye..."
+    },
+    {
+      "day": 2,
+      "player_id": 8,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: villager\nYour player_id: 8\n\nPlaye..."
+    },
+    {
+      "day": 2,
+      "player_id": 9,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: villager\nYour player_id: 9\n\nPlaye..."
+    },
+    {
+      "day": 2,
+      "player_id": 10,
+      "content": "Mock response to: 你是villager，请根据当前游戏状态生成一段发言。\n\n当前游戏状态：\nDay 2, Phase: vote\nYour role: villager\nYour player_id: 10\n\nPlay..."
+    }
+  ],
+  "vote_records": [
+    {
+      "day": 1,
+      "voter_id": 1,
+      "target_id": 1
+    },
+    {
+      "day": 1,
+      "voter_id": 2,
+      "target_id": 2
+    },
+    {
+      "day": 1,
+      "voter_id": 4,
+      "target_id": 4
+    },
+    {
+      "day": 1,
+      "voter_id": 5,
+      "target_id": 5
+    },
+    {
+      "day": 1,
+      "voter_id": 6,
+      "target_id": 6
+    },
+    {
+      "day": 1,
+      "voter_id": 7,
+      "target_id": 7
+    },
+    {
+      "day": 1,
+      "voter_id": 8,
+      "target_id": 8
+    },
+    {
+      "day": 1,
+      "voter_id": 9,
+      "target_id": 9
+    },
+    {
+      "day": 1,
+      "voter_id": 10,
+      "target_id": 1
+    },
+    {
+      "day": 2,
+      "voter_id": 2,
+      "target_id": 2
+    },
+    {
+      "day": 2,
+      "voter_id": 5,
+      "target_id": 5
+    },
+    {
+      "day": 2,
+      "voter_id": 6,
+      "target_id": 6
+    },
+    {
+      "day": 2,
+      "voter_id": 7,
+      "target_id": 7
+    },
+    {
+      "day": 2,
+      "voter_id": 8,
+      "target_id": 8
+    },
+    {
+      "day": 2,
+      "voter_id": 9,
+      "target_id": 9
+    },
+    {
+      "day": 2,
+      "voter_id": 10,
+      "target_id": 2
+    }
+  ],
+  "saved_at": "2026-05-28T01:33:14.681266"
+}

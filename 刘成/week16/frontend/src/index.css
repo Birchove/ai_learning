@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --werewolf-red: #dc2626;
+  --werewolf-gold: #f59e0b;
+  --werewolf-night: #1e1b4b;
+  --werewolf-day: #fef3c7;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  min-height: 100vh;
+}
+
+.player-card {
+  @apply p-4 rounded-lg border-2 transition-all duration-200;
+}
+
+.player-alive {
+  @apply bg-white/90 border-gray-300;
+}
+
+.player-dead {
+  @apply bg-gray-800/50 border-gray-600 opacity-60;
+}
+
+.role-werewolf {
+  @apply border-red-600 bg-red-100;
+}
+
+.role-villager {
+  @apply border-green-600 bg-green-100;
+}
+
+.role-seer {
+  @apply border-blue-600 bg-blue-100;
+}
+
+.role-witch {
+  @apply border-purple-600 bg-purple-100;
+}
+
+.role-guard {
+  @apply border-yellow-600 bg-yellow-100;
+}
+
+.role-hunter {
+  @apply border-orange-600 bg-orange-100;
+}
+
+.phase-indicator {
+  @apply px-4 py-2 rounded-full font-bold text-lg;
+}
+
+.phase-night {
+  @apply bg-indigo-900 text-indigo-200;
+}
+
+.phase-day {
+  @apply bg-amber-500 text-amber-900;
+}
+
+.phase-vote {
+  @apply bg-red-600 text-white;
+}
