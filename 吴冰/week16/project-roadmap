@@ -1,0 +1,113 @@
+---
+name: project-roadmap
+description: AI狼人杀项目 — 多智能体协作与博弈的 Agent Team 系统，当前已完成 Phase 1/2/4/5，完整实施路线图
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 5fd7adb0-fbe2-4e4b-bf1a-3c1c94630495
+---
+
+# AI 狼人杀项目路线图
+
+## 总体目标
+基于多 Agent 协作框架，构建一个能够自主完成信息不对称博弈的狼人杀 Agent Team 系统。核心在于多智能体的协作/对抗与交互机制设计。前端观战 UI 已完成。
+
+## 当前状态：已完成 Phase 1/2/4/5（截至 2026-05-28）
+
+### ✅ 第一阶段：核心游戏引擎
+- 角色定义：狼人、预言家、女巫、猎人、平民（7人局：2狼+2民+3神）
+- 回合流转：夜晚 → 白天发言 → 投票 → 淘汰 → 胜负判定
+- 角色行动：狼人共同刀人、预言家查验、女巫救/毒、猎人开枪
+- 胜负判定：神职全灭 / 平民全灭 / 狼人全灭
+- 信息隔离：不同角色只能看到自己应知的信息
+- 产出：可运行的游戏状态机 + 结构化日志
+
+### ✅ 第二阶段：Agent 框架设计
+- Agent 基类：on_night() / on_speech() / on_vote() / on_hunter_shot()
+- 角色策略接口：每个角色独立实现行动策略
+- 记忆模块：每个 Agent 维护推理历史（含 reasoning 思考过程）
+- 基于规则的基线策略（无 LLM）
+- 产出：多 Agent 全自动可运行对局
+
+### ✅ 第三阶段部分：死亡追踪
+- Player 增加 death_cause / death_round 字段
+- 每次淘汰精确记录原因和轮次
+
+### ✅ 第四阶段：可观测性 & 调试
+- 结构化日志（全流程 GameLogEntry）
+- Agent 推理过程导出（get_timeline() 含 reasoning）
+- 对局详情 API（/api/games/{id}/detail，含每个玩家的完整时间线和思考过程）
+- Agent 赛后总结（summarize() 方法）
+- 死亡回溯分析
+
+### ✅ 第五阶段：前端观战 UI
+- 玩家座位卡面板（存活/出局、角色颜色、银水标记）
+- 点击玩家查看完整过程 + 思考推理
+- 全局时间线视图（按轮次展示所有玩家行动）
+- 玩家过程视图
+- 阵营胜利分析 + 死亡回溯
+- 原始日志视图
+
+### 第三阶段（未开始）：LLM 驱动的智能 Agent
+- 每个 Agent 的 System Prompt（身份、规则、目标）
+- 观察模板（游戏状态 → LLM 文本）
+- 行动输出格式（结构化 JSON）
+- 发言 → 投票 → 夜间行动推理链路
+- 信息不对称处理
+
+### 第六阶段（未开始）：优化 & 扩展
+- 上下文窗口管理
+- 更多角色（守卫、白痴、骑士等）
+- Prompt Engineering 优化
+- 批量对局测试 / 胜率统计
+
+## 技术栈
+- 后端：Python + FastAPI + Uvicorn
+- 前端：原生 HTML/CSS/JS（单页应用）
+- 运行环境：conda py310_gpu
+- 端口：8000
+
+## 项目结构
+```
+E:/wolf/
+├── game/
+│   ├── enums.py      # Role, Camp, GamePhase 枚举
+│   ├── player.py     # Player 数据类（含 death_cause）
+│   ├── state.py      # GameState 对局状态
+│   ├── engine.py     # 游戏引擎（夜晚→白天→投票→胜负）
+│   └── logger.py     # 结构化日志
+├── agents/
+│   ├── base.py       # BaseAgent（含 _memory + reasoning）
+│   ├── werewolf.py   # 狼人 Agent
+│   ├── seer.py       # 预言家 Agent
+│   ├── witch.py      # 女巫 Agent
+│   ├── hunter.py     # 猎人 Agent
+│   └── villager.py   # 平民 Agent
+├── server/
+│   ├── app.py        # FastAPI 应用 + 路由
+│   ├── models.py     # Pydantic 响应模型
+│   └── controller.py # 游戏生命周期管理
+├── frontend/
+│   └── index.html    # 观战台 UI
+├── main.py           # CLI 入口
+└── .claude/
+    └── reference/    # 需求文档
+```
+
+## API 端点
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | / | 前端观战台 |
+| GET | /api/games | 列出所有游戏 |
+| POST | /api/games | 创建新游戏 |
+| GET | /api/games/{id} | 游戏状态 |
+| POST | /api/games/{id}/run | 启动 AI 自动对战 |
+| GET | /api/games/{id}/log | 结构化日志 |
+| GET | /api/games/{id}/summaries | Agent 赛后总结 |
+| GET | /api/games/{id}/detail | 完整详情（时间线+推理） |
+| GET | /docs | Swagger API 文档 |
+| GET | /openapi.json | OpenAPI 规范 |
+
+## 用户反馈收录
+- 2026-05-27：对局结束后每个 Agent 进行总结复盘 → 已实现（summarize() + 前端展示）
+- 2026-05-28：需要每个玩家的对局过程、思考过程、如何出局、如何胜利 → 已实现（/detail 端点 + 前端时间线）
